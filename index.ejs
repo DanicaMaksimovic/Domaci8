@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head></head>
+    <body>
+        <%- include('partials/header') %>
+
+        <h1> <%= appRecept %> </h1>
+        <% if(recept.length > 0) { %>
+            <p>Lista recepata</p>
+            <table>
+                <tr>
+                    <th>Broj</th>
+                    <th>Recept</th>
+                </tr>
+                <% recept.forEach(recepti => { %>
+                    <tr>
+                        <th><%= recept.number %></th>
+                        <th><%= recept.recipe %></th>
+                    </tr>
+                    <% }) %>
+            </table>
+            <% }else { %>
+                <p>Nema ni jednog recepta</p>
+                <% } %>
+
+        <%- include('partials/footer') %>
+    </body>
+</html>
